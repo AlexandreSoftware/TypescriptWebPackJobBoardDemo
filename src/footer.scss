@@ -1,0 +1,19 @@
+footer.job-footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 10%;
+}
+footer.job-footer div{
+    margin-left: 2%;
+}
+footer.job-footer a{
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+footer.job-footer a.github{
+    text-decoration: none;
+    color: inherit;
+}
