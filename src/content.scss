@@ -1,8 +1,7 @@
 @import "./Home.scss";
 div#content{
-    margin-left: 30vw;
     grid-area: content;
-}
+    }
 @media screen and (min-width: 600px) {
     div#content{
         margin-left:20vw;

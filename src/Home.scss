@@ -1,0 +1,12 @@
+div.home-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+div.home-container > div.img-logo{
+    width: 40vw;
+    height: 40vh;
+    
+}

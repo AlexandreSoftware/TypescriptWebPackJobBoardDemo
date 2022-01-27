@@ -1,4 +1,6 @@
 const path = require('path');
+const file_loader = require("file-loader")
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: './src/index.ts',
@@ -12,6 +14,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
+        exclude: path.resolve(__dirname, 'node_modules'),
         use: [
           // Creates `style` nodes from JS strings
           "style-loader",
@@ -22,9 +25,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
-      }
+        test:/\.html$/,
+        use: [
+          'html-webpack-plugin'
+        ]
+      },
     ],
   },
   devServer: {
@@ -32,12 +37,22 @@ module.exports = {
     port: 9000
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js','css','sass','scss'],
+    extensions: ['.tsx', '.ts', '.js',],
   },
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'pub'),
   },
   plugins:[
+    new CopyPlugin(
+      {
+        patterns:[
+          { from: "src/files", to: "files" },
+          { from: "src/index.html", to: "index.html" },
+        ]
+      }
+
+    )
+
   ]
 };
