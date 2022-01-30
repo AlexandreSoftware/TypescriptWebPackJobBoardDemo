@@ -1,11 +1,43 @@
-<form onsubmit="submitApplicants(e)" id="formApplicants">
+<div id="error-container" class="d-none jumbotron bg-danger text-white">
+    <p class="lead">Form is missing elements</p>
+    <p id="error-container-text"> </p>
+</div>
+<form id="formApplicant">
     <div class="form-label">
-        <label for="Name" >Name</label>
-        <input type="text" name="Name" id="name" class="input-group-text"/>
+        <label for="name" >Name</label>
+        <input type="text" name="name" id="name" class="input-group-text"/>
     </div>
     <div class="form-label">
-        <label for="WageExpectation">WageExpectation</label>
-        <input type="number" name="WageExpectation" id="WageExectation" class="input-group-text"/>        
+        <label for="nageExpectation">WageExpectation</label>
+        <input type="number" name="wageExpectation" id="WageExectation" class="input-group-text"/>        
     </div>
     <button type="submit" class="btn btn-primary mt-1">Submit</button>
 </form>
+<div id="sucess-container" class="d-none jumbotron bg-success text-black pt-1">
+    <p class="lead">Sucessfully inserted element</p>
+</div>
+<div id="submit-error-container" class="d-none jumbotron bg-danger text-white pt-1">
+    <p class="lead">ERROR: unable to insert element</p>
+</div>
+
+
+<table class="table">
+    <tr>
+        <td scope="col">#</td>
+        <th scope="col">Name</th>
+        <th scope="col">WageExectation</th>
+        <th scope="col">Jobs</th>
+    </tr>
+    <tr>
+        <th scope="row">1</th>    
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+    <th scope="row">2</th>      
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+  </table>

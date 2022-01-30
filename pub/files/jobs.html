@@ -2,7 +2,7 @@
     <p class="lead">Form is missing elements</p>
     <p id="error-container-text"> </p>
 </div>
-<form id="formJobs">
+<form id="formJob">
     <div class="form-label">
         <label for="Title" >Title</label>
         <input type="text" name="title" id="title" class="input-group-text"/>
@@ -29,3 +29,32 @@
     </div>
     <button type="submit" class="btn btn-primary mt-1">Submit</button>
 </form>
+<div id="sucess-container" class="d-none jumbotron bg-success text-black pt-1">
+    <p class="lead">Sucessfully inserted element</p>
+</div>
+<div id="submit-error-container" class="d-none jumbotron bg-danger text-white pt-1">
+    <p class="lead">ERROR: unable to insert element</p>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th scope="col">#</td>
+        <th scope="col">Title</td>
+        <th scope="col">SubTitle</td>
+        <th scope="col">MinPay</td>
+        <th scope="col">MaxPay</td>
+        <th scope="col">Description</td>
+        <th scope="col">Status</td>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+  </table>

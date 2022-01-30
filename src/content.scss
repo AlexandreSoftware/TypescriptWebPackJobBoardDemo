@@ -1,9 +1,7 @@
 @import "./Home.scss";
+@import "./Job/Job";
+@import "./Applicant/Applicant.scss";
 div#content{
     grid-area: content;
-    }
-@media screen and (min-width: 600px) {
-    div#content{
-        margin-left:20vw;
-    }
-}   
+
+}

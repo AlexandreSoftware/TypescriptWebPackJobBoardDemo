@@ -1,5 +1,6 @@
 import Status from "./Status"
 class Job{
+    id:number;
     title:string;
     subtitle:string;
     minPay:number;
