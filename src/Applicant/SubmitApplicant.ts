@@ -1,6 +1,8 @@
 import axios from "axios";
 import Applicant from "./Applicant";
 import * as $ from "jquery";
+import ClearApplicants from "./ClearApplicants";
+import GetApplicants from "./GetApplicants";
 function submitApplicant(e:Event){
     e.preventDefault();
     let formElement = <HTMLFormElement>$("#formApplicant")[0];
@@ -17,8 +19,11 @@ function submitApplicant(e:Event){
         axios.put("https://localhost:7149/Applicant",applicant)
         .then(
         ()=>{
-            console.log("sucso")
-            $("#sucess-container").removeClass("d-none").show()
+            $("#sucess-container")
+             .removeClass("d-none")
+              .show()
+            ClearApplicants();
+            GetApplicants();
         },err=>{
             $("#submit-error-container").removeClass("d-none")
                 .show()

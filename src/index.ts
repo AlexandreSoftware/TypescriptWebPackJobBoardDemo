@@ -4,6 +4,8 @@ import axios from "axios";
 import { contains, data } from 'jquery';
 import submitJob from "./Job/SubmitJobs"
 import submitApplicant from './Applicant/SubmitApplicant';
+import GetApplicants from './Applicant/GetApplicants';
+import GetJobs from './Job/GetJobs';
 $("[link-to]").each((iterator,i)=>{
 
     $(i).on("click",(y)=>{
@@ -15,12 +17,13 @@ $("[link-to]").each((iterator,i)=>{
 function setcontent(link:string){
     axios(link).then(z=>{
         $("#content").html(k=>z.data);
-        console.log(link)
         if(link.includes("Jobs")){
             $("#formJob")[0].onsubmit=submitJob;
+            GetJobs();
         }
         if(link.includes("Applicants")){
             $("#formApplicant")[0].onsubmit=submitApplicant;
+            GetApplicants();
         }
     });
 }

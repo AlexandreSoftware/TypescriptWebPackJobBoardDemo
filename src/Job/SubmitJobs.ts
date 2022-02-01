@@ -2,6 +2,8 @@ import axios from 'axios';
 import Job from './Job';
 import Status from './Status';
 import * as $ from 'jquery';
+import ClearJobs from './clearJobs';
+import GetJobs from './GetJobs';
 
 function submitJobs(e:Event){
     e.preventDefault();
@@ -22,6 +24,8 @@ function submitJobs(e:Event){
         axios.put("https://localhost:7149/Job/",job).then(
         ()=>{
             $("#sucess-container").removeClass("d-none").show()
+            ClearJobs();
+            GetJobs();
         },err=>{
             $("#submit-error-container").removeClass("d-none")
                 .show()
@@ -50,9 +54,6 @@ function checkIfIthasAllJobElements(formData:FormData):string{
     }
     if(formData.get("description").toString()==""){
         value += "Description "
-    }
-    if(formData.get("status").toString()==""){
-        value += "Status"
     }
     return value
 }
