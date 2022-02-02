@@ -2,16 +2,17 @@ import axios from "axios";
 import Applicant from "./Applicant";
 import * as $ from "jquery"
 import SearchApplicant from "./SearchApplicant";
+import DeleteApplicant from "./DeleteApplicant";
 function GetApplicants(){
     axios.get<Applicant[]>("https://localhost:7149/Applicant").then(
         item=>{
             let {data} = item;
-            console.log(data)
             data.forEach(element => {
 
                 let elementdiv = document.createElement("tr")
+                elementdiv.className="aprow";
                 let div   = `
-                <th scope="row" id=element>${element.id}</th>    
+                <td scope="row" id=element>${element.id}</th>    
                 <td>${element.name}</td>
                 <td>${element.wageExpectation}</td>
                 <td>${element.jobs.length}</td>
@@ -23,7 +24,7 @@ function GetApplicants(){
                   SearchApplicant(element.id)
                 })
                 $(`.delete${element.id}`).on("click",(y)=>{
-                  
+                  DeleteApplicant(element.id);
                 })
             });;
             

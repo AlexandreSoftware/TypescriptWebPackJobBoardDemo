@@ -5,7 +5,6 @@ export default function SearchApplicant(id){
     axios.get<Applicant>(`https://localhost:7149/Applicant/${id}`).then(
         response =>{
             let {data} = response;
-            console.log(data.jobs)
             let element = applicantWidget(data);
             $("body").append(element);
             

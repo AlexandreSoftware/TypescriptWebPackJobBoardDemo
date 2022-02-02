@@ -1,5 +1,5 @@
 import * as $ from "jquery";
 function ClearApplicants(){
-    $("#applicantTable")[0].innerHTML=""
+    $("#applicantTable > tr.aprow").remove();
 }
 export default ClearApplicants;
